@@ -1,0 +1,1 @@
+SELECT Name, Kontinent FROM Land WHERE Bevoelkerung > 200000000;
