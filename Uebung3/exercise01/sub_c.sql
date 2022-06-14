@@ -1,3 +1,15 @@
+WITH filmSchauspieler AS (
+    SELECT title, name FROM movie JOIN actor ON mid = movie_id
+)
+
+SELECT DISTINCT fs1.title, fs2.title FROM filmSchauspieler fs1, filmSchauspieler fs2
+WHERE fs1.title < fs2.title
+AND fs1.name = fs2.name
+ORDER BY fs2.title
+LIMIT 10;
+
+--------------
+
 SELECT DISTINCT title1, title2 FROM
         (SELECT actor1.movie_id AS id1, actor2.movie_id AS id2 
         FROM actor AS actor1, actor AS actor2 
