@@ -25,5 +25,5 @@ ORDER BY supp_nation, cust_nation, l_year;
 /*
 Gebe das Land des Lieferanten und Kunden, das Lieferjahr
 und der Gesamtumsatz aller Lieferungen, wo entweder Kunde aus Deutschland und Lieferant aus den USA
-oder andersherum kommen, die Lieferung zwischen 1995 und 1996 (inkl.) erfolgt ist.
-Sortiere die Antwort.
+oder andersherum kommen. Die Lieferung soll dabei zwischen 1995 und 1996 (inkl.) erfolgt sein.
+Sortiere nach Nation Zulieferer, bei Gleichheit nach Nation Kunde, bei Gleichheit nach Jahr.
