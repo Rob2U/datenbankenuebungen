@@ -13,6 +13,6 @@ AND o_orderdate < date '1992-01-01' + interval '1' year
 GROUP BY n_name
 ORDER BY revenue DESC;
 
--- Gebe den Gesamtumsatz pro Land der im Jahr 1992 mit Bestellungen erreicht wurde,
--- wobei nur die Bestellungen betrachtet werden, wo Kunde und Lieferant aus dem gleichen Land stammen.
--- Gleichzeitig sind nur die Länder die in Europa liegen von Interesse.
+-- Gebe den Gesamtumsatz pro Land für Länder aus Europa an, der im Jahr 1992 mit Bestellungen erreicht wurde.
+-- Es sollen nur die Bestellungen betrachtet werden, wo Kunde und Lieferant aus dem gleichen Land stammen.
+-- Sortiere absteigend nach Umsatz.
