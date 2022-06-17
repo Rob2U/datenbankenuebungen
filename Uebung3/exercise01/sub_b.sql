@@ -5,4 +5,5 @@ SELECT name FROM (
     ON movie_id = mid
 ) as producer_name
 WHERE title IS NULL 
-ORDER BY name ASC;
+ORDER BY name ASC
+FETCH FIRST 10 ROWS ONLY;;

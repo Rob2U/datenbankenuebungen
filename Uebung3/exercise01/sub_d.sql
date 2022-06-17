@@ -13,7 +13,7 @@ SELECT * FROM Actor
 UNION 
 SELECT * FROM Prod
 ORDER BY name ASC
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;
 
 -- Multimengensemantik
 WITH EoN AS (
@@ -30,7 +30,7 @@ SELECT * FROM Actor
 UNION ALL
 SELECT * FROM Prod
 ORDER BY name ASC
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;
 
 -----
 
@@ -43,7 +43,7 @@ SELECT name FROM
         WHERE movie_id=(SELECT mid FROM movie WHERE title='Edge of Night, The'))
     ) as contributors
 ORDER BY name ASC;
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;
 -- above is set and below is multiset
 SELECT name FROM 
     (
@@ -54,4 +54,4 @@ SELECT name FROM
         WHERE movie_id=(SELECT mid FROM movie WHERE title='Edge of Night, The'))
     ) as contributors
 ORDER BY name ASC
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;

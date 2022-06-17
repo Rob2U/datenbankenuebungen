@@ -6,7 +6,7 @@ SELECT DISTINCT fs1.title, fs2.title FROM filmSchauspieler fs1, filmSchauspieler
 WHERE fs1.title < fs2.title
 AND fs1.name = fs2.name
 ORDER BY fs2.title
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;;
 
 --------------
 
@@ -23,4 +23,4 @@ SELECT DISTINCT title1, title2 FROM
     ON id1 = mid1
     AND id2 = mid2
 ORDER BY title2 ASC
-LIMIT 10;
+FETCH FIRST 10 ROWS ONLY;;

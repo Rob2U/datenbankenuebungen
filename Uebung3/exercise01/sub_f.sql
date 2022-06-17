@@ -23,4 +23,4 @@ SELECT name, movie_count FROM
     )
     AS count_actor_actress
 ORDER BY movie_count DESC
-LIMIT 3;
+FETCH FIRST 3 ROWS ONLY;
