@@ -1,3 +1,19 @@
+WITH anzSchauspieler AS (
+    SELECT m.title, COUNT (a.name) AS anz FROM actor a, movie m WHERE movie_id = m.mid GROUP BY m.title
+), anzSchauspielerinnen AS (
+    SELECT m.title, COUNT (a.name) AS anz FROM actress a, movie m WHERE movie_id = m.mid GROUP BY m.title
+), unionSchau AS (
+    (SELECT * FROM anzSchauspieler) UNION ALL (SELECT * FROM anzSchauspielerinnen)
+)
+
+SELECT title, SUM(anz) AS AnzahlSchauspielerUndSchauspielerinnen
+FROM unionSchau
+GROUP BY title
+ORDER BY AnzahlSchauspielerUndSchauspielerinnen DESC
+FETCH FIRST 3 ROWS ONLY;
+
+-----------------------
+
 --fix weird syntax error in code below
 SELECT title, person_count FROM
         (

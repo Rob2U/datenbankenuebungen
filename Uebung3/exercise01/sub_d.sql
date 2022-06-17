@@ -1,3 +1,39 @@
+WITH EoN AS (
+    SELECT mid FROM movie WHERE title = 'Edge of Night, The'
+), Prod AS (
+    SELECT p.name as name FROM producer p, EoN e 
+    WHERE e.mid = p.movie_id  
+), Actor AS (
+    SELECT a.name as name FROM actor a, EoN e 
+    WHERE e.mid = a.movie_id  
+)
+
+-- Mengensemantik
+SELECT * FROM Actor
+UNION 
+SELECT * FROM Prod
+ORDER BY name ASC
+LIMIT 10;
+
+-- Multimengensemantik
+WITH EoN AS (
+    SELECT mid FROM movie WHERE title = 'Edge of Night, The'
+), Prod AS (
+    SELECT p.name as name FROM producer p, EoN e 
+    WHERE e.mid = p.movie_id  
+), Actor AS (
+    SELECT a.name as name FROM actor a, EoN e 
+    WHERE e.mid = a.movie_id  
+)
+
+SELECT * FROM Actor 
+UNION ALL
+SELECT * FROM Prod
+ORDER BY name ASC
+LIMIT 10;
+
+-----
+
 SELECT name FROM 
     (
         (SELECT name FROM producer 
