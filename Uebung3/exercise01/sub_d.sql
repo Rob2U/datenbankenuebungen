@@ -42,7 +42,7 @@ SELECT name FROM
         (SELECT name FROM actor 
         WHERE movie_id=(SELECT mid FROM movie WHERE title='Edge of Night, The'))
     ) as contributors
-ORDER BY name ASC;
+ORDER BY name ASC
 FETCH FIRST 10 ROWS ONLY;
 -- above is set and below is multiset
 SELECT name FROM 

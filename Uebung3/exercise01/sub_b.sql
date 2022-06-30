@@ -6,4 +6,4 @@ SELECT name FROM (
 ) as producer_name
 WHERE title IS NULL 
 ORDER BY name ASC
-FETCH FIRST 10 ROWS ONLY;;
+FETCH FIRST 10 ROWS ONLY;

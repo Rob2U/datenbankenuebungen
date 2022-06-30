@@ -19,4 +19,5 @@ ON actor_T.movie_id = movie.mid)
 as actor_T_movie
 
 WHERE actor_T_movie.movie_id IN 
-(SELECT movie_id FROM genre WHERE genre='Action');
+(SELECT movie_id FROM genre WHERE genre='Action')
+ORDER BY name ASC;
